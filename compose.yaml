@@ -1,1 +1,20 @@
+version: '3.8'
+
 services:
+  postgresql:
+    container_name: postgres-user
+    image: postgres
+    ports:
+      - "5449:5432"
+    expose:
+      - "5449"
+#    volumes:
+#      - postgres_user_service:/data/db
+    environment:
+      POSTGRES_DB: users
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+    restart: unless-stopped
+
+#volumes:
+#  postgres_user_service:

@@ -1,0 +1,24 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: google-authentication-example
+
+  datasource:
+    url: jdbc:postgresql://localhost:5449/users
+    username: root
+    password: root
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    show-sql: true
+    hibernate:
+#      ddl-auto: validate
+      ddl-auto: create-drop
+
+  flyway:
+    user: root
+    password: root
+    schemas:
+      - users
